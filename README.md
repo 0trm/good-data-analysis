@@ -157,6 +157,10 @@ When analysis gets ten times cheaper, the temptation is ten times more analyses.
 
 Agents collapse the middle of the job: given a question, they produce a description. The two ends do not delegate. Deciding what is worth asking requires knowing the business; deciding what the answer means requires owning the consequences. Riley's three stages map cleanly onto the division of labor: validation you enforce, description you delegate, evaluation you keep.
 
+### You can't credibly orchestrate what you can't do yourself
+
+Everything in this section assumes a reviewer who could, in principle, have done the work. That is the mechanism, not nostalgia. You can only spot the semantic bug if you know the schema, only judge the filters if you have written filters, only tell plausible from true if you learned the difference the slow way. This is why the first three sections survive the agentic era intact: the skills you no longer exercise daily are the qualification for supervising the agent that does. An analyst who cannot do the analysis cannot check it – only forward it.
+
 ## Closing
 
 Riley closed by observing that careful work is invisible: nobody making decisions from your analysis sees that you checked population sizes or validated the effect across browsers. 2026 sharpens the point. Now even the analysis is invisible, produced in seconds by a machine. What remains visible – the only visible thing – is whether you were right. When anyone can generate an analysis by asking for one, being right is the entire job.
