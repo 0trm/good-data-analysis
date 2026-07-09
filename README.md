@@ -32,7 +32,7 @@ Means and medians compress away exactly the things that matter: multimodal behav
      0s  40s                               30m
        humans                            bot farm
 
-     mean: 4 minutes. Nobody is at 4 minutes.
+     mean: 4 minutes. nobody is at 4 minutes.
 ```
 
 ### Treat outliers as canaries
@@ -51,21 +51,66 @@ You cannot trust analysis code – yours or an agent's – until you have watche
 
 Split by device, channel, country, browser, day. If the phenomenon could plausibly differ across subgroups, slicing is how you find out. If it should not differ, consistency across slices is cheap reassurance that you are measuring the right thing. When comparing two groups, watch for mix shifts – if the slices are weighted differently in each group, Simpson's paradox will happily invert your conclusion.
 
+```
+           desktop   mobile   overall
+ before      2.0%      1.0%      1.8%    (mix 80/20)
+ after       2.2%      1.2%      1.5%    (mix 30/70)
+              ↑         ↑         ↓
+
+     every slice improved. the mix moved.
+```
+
 ### Ask whether it matters, not just whether it is significant
 
 With enough data everything is statistically significant; the question is whether a 0.1% difference changes any decision. The reverse trap exists too: with little data, "not significant" is not the same as "neutral". Ask how large an effect could still be hiding inside your confidence interval.
+
+```
+                  0
+                  │
+ A                 ├●┤            significant, and irrelevant
+ B    ├───────────┼────●───────┤  "not significant", maybe huge
+                  │
+```
 
 ### Slice by time
 
 Systems drift. Instrumentation that was verified at launch quietly breaks in month three, and nobody re-checks. Day-level slices catch the breakage and give you an honest feel for natural variation. When a day looks bizarre, do not delete it – use it as a hook to find the cause first.
 
+```
+ events
+   │ ▆▅▇▆▅▆▇▅▆▇▆▅▆▇
+   │                ▂▃▂▂▃▂▃▂▂▃▂▂  ← the tag broke. nobody was looking.
+   └──────────────────────────────▶ days
+     launch: verified   month three: unchecked
+```
+
 ### Count what you filter
 
 Nearly every analysis begins with exclusions: internal traffic, bots, spam, out-of-scope users. State every filter and count what it removes. The cleanest way is to compute your metrics for the excluded population too. In my traffic reporting, the spam share is a headline number of its own, never a silent WHERE clause.
 
+```
+ raw pageviews          1,000,000
+   – internal traffic      12,400
+   – known bots           214,000
+   – spam rule             97,300
+ reported                 676,300
+
+ every minus is a decision. count them all.
+```
+
 ### Define your ratios
 
 The interesting choices hide in denominators. "Sessions per user" – users with a session, users seen this month, or all registered accounts? Conditional metrics deserve the same care: "time to click" means "time to click, given a click", and the given part can shift between the groups you compare.
+
+```
+ "sessions per user"
+
+    sessions / users with a session      3.1
+    sessions / users active this month   1.9
+    sessions / all registered accounts   0.4
+
+ same name, three answers.
+```
 
 ## Process
 
@@ -95,6 +140,12 @@ New features come with tempting new metrics. Look at the boring ones first – s
 
 For anything new, compute the same quantity by two routes, ideally from two data sources. Agreement does not prove you are right, but disagreement reliably finds bugs: in logging, in filters, in your understanding.
 
+```
+ route A: BigQuery export ──▶ 4.2M ┐
+                                   ├── Δ 9%. the bug lives here.
+ route B: GA4 Data API    ──▶ 4.6M ┘
+```
+
 ### Check for reproducibility
 
 An effect that is real shows up across populations, across time, and across random subsamples. A model that falls apart under small perturbations of the data has not captured anything fundamental about the process that generated it.
@@ -119,6 +170,15 @@ Get a rough answer through the entire pipeline before perfecting any stage. The 
 
 If clicks feed the ranking system, more clicks cannot prove users are happier: the system was told to produce clicks. Never evaluate a change by a metric the change manipulates, and be wary even of slicing on fed-back variables – the mix shifts become impossible to reason about.
 
+```
+       ┌──────────────────┐
+       ▼                  │
+    ranking ──▶ clicks ───┘
+
+    clicks trained the ranking.
+    clicks cannot judge it.
+```
+
 ## Mindset
 
 ### Start with questions, not data or tools
@@ -132,6 +192,15 @@ When you find something interesting, run both prompts against yourself: what oth
 ### Correlation still is not causation
 
 Given enough metrics and enough experiments, some signals will align by chance. When you want to claim "A causes B", or even "A is a durable proxy for B", ask how you would validate it and whether a hidden C explains both. Be explicit with your audience about which claims you can and cannot make.
+
+```
+        C (unseen)
+       ╱ ╲
+      ▼   ▼
+      A   B
+
+  A moves with B. neither moves the other.
+```
 
 ### Peers first, stakeholders second
 
@@ -148,6 +217,13 @@ The original guide assumed that doing the analysis was the expensive part. That 
 ### Plausible is the default output
 
 A language model's native talent is producing what an answer should look like. For prose that is often enough; for analysis it is the failure mode. An agent's number arrives with the same confident formatting whether it is right or subtly filtered into fiction. Calibrate accordingly: fluency is not evidence.
+
+```
+ a right answer:  "Sessions fell 12%, driven by paid social."
+ a wrong answer:  "Sessions fell 12%, driven by paid social."
+
+ they look identical. that's the problem.
+```
 
 ### Correctness lives in the context
 
