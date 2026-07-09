@@ -19,6 +19,22 @@ This is my re-version. The core survives, compressed and re-grounded in the work
 
 Means and medians compress away exactly the things that matter: multimodal behavior, heavy tails, a second population hiding inside your data. Plot the histogram, the CDF, or a Q-Q plot before you quote an average. A "4-minute average session" reads very differently once you see it is two humps: humans at 40 seconds and a bot farm pinned at 30 minutes.
 
+```
+ sessions
+    │
+    │   █
+    │  ███
+    │  ███                                  ██
+    │ █████                                ████
+    │ █████                                ████
+    │███████▄▄                          ▄▄██████▄▄
+    └──────────────────────────────────────────────▶ duration
+     0s  40s                               30m
+       humans                            bot farm
+
+     mean: 4 minutes. Nobody is at 4 minutes.
+```
+
 ### Treat outliers as canaries
 
 Outliers are often the first visible symptom of a problem with the analysis itself. Pages with impossibly high click-through usually mean double-counting; pages with zero clicks usually mean a broken tag. It is fine to exclude outliers or bucket them as "unusual", but only after you know why they ended up there. Some will never be explainable – time-box the hunt.
@@ -156,6 +172,11 @@ When analysis gets ten times cheaper, the temptation is ten times more analyses.
 ### The question and the so-what stay yours
 
 Agents collapse the middle of the job: given a question, they produce a description. The two ends do not delegate. Deciding what is worth asking requires knowing the business; deciding what the answer means requires owning the consequences. Riley's three stages map cleanly onto the division of labor: validation you enforce, description you delegate, evaluation you keep.
+
+```
+ the question ──▶ [ the analysis ] ──▶ the so-what
+     yours           the agent's           yours
+```
 
 ### You can't credibly orchestrate what you can't do yourself
 
