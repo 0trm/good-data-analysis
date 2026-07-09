@@ -2,16 +2,16 @@
 
 *The habits of careful analysts, re-versioned for the agentic era.*
 
-In 2019, Patrick Riley published [Good Data Analysis](https://developers.google.com/machine-learning/guides/good-data-analysis), a distillation of what Google's most credible analysts actually did. I keep returning to it, because almost nothing in it has aged. What has changed is who does the typing.
+In 2019, Patrick Riley published [Good Data Analysis](https://developers.google.com/machine-learning/guides/good-data-analysis), a guide with the habits of Google's best analysts. I come back to it often because almost all of it still applies. What changed is who does the work.
 
-In 2026 an agent writes the SQL, runs it, charts the result, and narrates a conclusion in less time than it takes to read this paragraph. Analysis has become nearly free to produce and exactly as expensive to get right. Wrong answers now arrive faster, in confident prose, with a tidy chart attached. That makes Riley's guide more relevant, not less: when the doing is delegated, what remains of the analyst's job is precisely what the guide was always about – validation, skepticism, and judgment.
+In 2026, an agent writes the SQL, runs it, builds the chart, and hands you a conclusion in seconds. Analysis is now almost free to produce, but getting it right costs the same as before. Wrong answers arrive faster, and they look good. This makes Riley's guide more relevant, not less: when an agent does the work, what is left for the analyst is exactly what the guide was about – validation, skepticism, and judgment.
 
-This is my re-version. The core survives, compressed and re-grounded in the work I do (web analytics: GA4, BigQuery). A fourth section covers what the original could not have: how to delegate analysis to agents without losing the plot.
+This is my version. I kept the core, cut it down, and moved the examples to my field: web analytics (GA4, BigQuery). I also added a fourth section that the original could not have: how to hand analysis to agents without losing control.
 
 - **[Technical](#technical)** – how to examine data
 - **[Process](#process)** – how to run an analysis
 - **[Mindset](#mindset)** – how to be right more often
-- **[Agents](#agents)** – how to delegate without losing the plot
+- **[Agents](#agents)** – how to delegate without losing control
 
 ## Technical
 
