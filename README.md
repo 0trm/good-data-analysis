@@ -72,14 +72,15 @@ With enough data, everything is statistically significant. The real question is 
                   │
 ```
 
-### Slice by time
+### Check consistency over time
 
-Systems drift. Tracking that was verified at launch breaks quietly in month three, and nobody checks again. Day-level slices catch this, and they show you the natural variation of the metric. When one day looks strange, do not delete it – first find out why.
+Systems drift. Tracking that was verified at launch breaks quietly in month three, and nobody checks again. Looking at the data day by day catches this, and it shows you the natural variation of the metric. When one day looks strange, do not delete it – first find out why.
 
 ```
  events
-   │ ▆▅▇▆▅▆▇▅▆▇▆▅▆▇
-   │                ▂▃▂▂▃▂▃▂▂▃▂▂  ← the tag broke. nobody was looking.
+   │ ▄▆▅▇▆▅▆▇▅▆▇▆▅▆
+   │ ██████████████
+   │ ██████████████ ▂▃▂▂▃▂▃▂▂▃▂▂  ← the tag broke. nobody was looking.
    └──────────────────────────────▶ days
      launch: verified   month three: unchecked
 ```
