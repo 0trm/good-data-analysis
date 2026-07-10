@@ -6,7 +6,7 @@ In 2019, Patrick Riley published Good Data Analysis, a guide with the habits of 
 
 In 2026, an agent writes the SQL, runs it, builds the chart, and hands you a conclusion in seconds. Analysis is now almost free to produce, but getting it right costs the same as before. Wrong answers arrive faster, and they look good. This makes Riley's guide more relevant, not less: when an agent does the work, what is left for the analyst is exactly what the guide was about – validation, skepticism, and judgment.
 
-This is a re-version. I kept the core, cut it down, and added a fourth section that the original could not have: how to hand analysis to agents without losing control.
+This is a re-version. I kept the core, cut it down, and added a fourth section highly relevant today: how to hand analysis to agents without losing control.
 
 - **[Technical](#technical)** – how to examine data
 - **[Process](#process)** – how to run an analysis
