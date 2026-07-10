@@ -123,7 +123,7 @@ Three stages, each with more room for debate:
 2. **Description** – what does it say? ("Sessions from paid social fell 12% week over week.")
 3. **Evaluation** – so what? Is this good or bad, and for whom?
 
-Description is where people can agree; evaluation is where they argue. If you mix them, you will see the interpretation you wanted to see. You will jump between stages while you work – just always know which one you are in.
+Description is where people can agree; evaluation is where they argue. If you mix description and evaluation, you will read the data as support for the conclusion you already had. You will jump between stages while you work – just always know which one you are in.
 
 ### Understand how the data was collected before reading it
 
@@ -186,7 +186,7 @@ If clicks feed the ranking system, more clicks cannot prove users are happier: t
 
 There is always a reason someone wants an analysis. Turn it into a question before touching data. Analysis without a question goes nowhere, and this failure got cheaper: an agent will happily produce endless exploration with no direction. The old version of the trap still exists too – a favorite technique looking for problems it fits.
 
-### Be champion and skeptic at once
+### Be believer and skeptic at once
 
 When you find something interesting, ask yourself two things: what other evidence would show this is real, and what would prove it wrong? The skeptic side matters most when the person who asked wants a specific answer.
 
@@ -205,7 +205,7 @@ With enough metrics and enough experiments, some signals align by chance. Before
 
 ### Peers first, stakeholders second
 
-A peer has no agenda; a stakeholder always has one. Early in the analysis, peers know the traps and the past work. At the end, they see the odd things you stopped seeing. An agent review is a useful filter before you take a peer's time, but it is not a replacement: the peer knows the context that nobody wrote down.
+Show your analysis to another analyst before you show it to the person who asked for it. The stakeholder wants a specific answer; a peer only wants the analysis to be correct. Early in the work, a peer points you to traps and past work on the topic. At the end, a peer spots the strange things you stopped seeing. An agent review is a useful filter before you take a peer's time, but it is not a replacement: the peer knows context that nobody wrote down.
 
 ### Say "I don't know" early, and own mistakes fast
 
@@ -257,7 +257,7 @@ Agents take over the middle of the job: you give a question, they return a descr
 
 ### You can't credibly orchestrate what you can't do yourself
 
-Everything in this section assumes a reviewer who could, in principle, do the work themselves. That is the mechanism, not nostalgia. You can only spot the meaning bug if you know the schema. You can only judge the filters if you have written filters. You can only tell plausible from true if you learned the difference the slow way. This is why the first three sections still matter: the skills you no longer use daily are the qualification for supervising the agent that does. An analyst who cannot do the analysis cannot check it – only forward it.
+Everything in this section assumes a reviewer who could, in principle, do the work themselves. You can only spot the meaning bug if you know the schema. You can only judge the filters if you have written filters. You can only tell plausible from true if you learned the difference the slow way. This is why the first three sections still matter: the skills you no longer use daily are the qualification for supervising the agent that does. An analyst who cannot do the analysis cannot check it.
 
 ## Closing
 
