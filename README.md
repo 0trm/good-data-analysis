@@ -65,11 +65,13 @@ Split the data by device, channel, country, browser, day. If the effect can diff
 With enough data, everything is statistically significant. The real question is whether a 0.1% difference changes any decision. The opposite trap also exists: with little data, "not significant" does not mean "no effect". Ask how big an effect could still hide inside your confidence interval.
 
 ```
-                  0
+                  0 = no effect
                   │
- A                 ├●┤            significant, and irrelevant
- B    ├───────────┼────●───────┤  "not significant", maybe huge
+ A                 ├●┤            "significant", too small to matter
+ B    ├───────────┼────●───────┤  "not significant", could be large
                   │
+
+ ● = estimate   ├──┤ = confidence interval
 ```
 
 ### Check consistency over time
