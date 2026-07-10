@@ -213,7 +213,7 @@ Admitting the limits of what you know feels like weakness, but it builds credibi
 
 ## Agents
 
-The original guide assumed that doing the analysis was the expensive part. That is no longer true. This section is what I learned from running analysis through agents every day.
+The original guide assumed that doing the analysis was the expensive part. That is no longer true. This section is what I learned from running analysis through agents every day. Anthropic groups these skills into four and calls it [AI fluency](https://www.anthropic.com/ai-fluency): delegation, description, discernment, and diligence. The items below are the analyst's version of those four.
 
 ### Plausible is the default output
 
