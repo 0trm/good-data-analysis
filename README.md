@@ -219,7 +219,7 @@ The original guide assumed that doing the analysis was the expensive part. That 
 
 ### Plausible is the default output
 
-A language model is good at producing what an answer should look like. For prose, that is often enough. For analysis, it is the failure mode. An agent's number arrives with the same confident format whether it is right or wrong. Calibrate for that: fluency is not evidence.
+A language model is good at producing what an answer should look like. For prose, that is often enough. For analysis, it is the failure mode. An agent's number arrives with the same confident format whether it is right or wrong. Calibrate for that: fluency is not evidence. Anthropic automated 95% of its internal analytics queries and still calls silent failures – wrong answers that nobody questions – the hardest open problem.
 
 ```
  a right answer:  "Sessions fell 12%, driven by paid social."
@@ -230,7 +230,7 @@ A language model is good at producing what an answer should look like. For prose
 
 ### Correctness lives in the context
 
-Most agent errors are not SQL bugs; they are meaning bugs. The agent did not know that a flag arrives as a string, that the export lags two days, that the source table mixes real campaign tags with synthetic values. It cannot know what nobody told it. Document your schema's meanings, definitions, and traps once, give that to every agent, and every future analysis inherits the fix. Undocumented meaning is the biggest source of confident wrong answers.
+Most agent errors are not SQL bugs; they are meaning bugs. The agent did not know that a flag arrives as a string, that the export lags two days, that the source table mixes real campaign tags with synthetic values. It cannot know what nobody told it. Document your schema's meanings, definitions, and traps once, give that to every agent, and every future analysis inherits the fix. Undocumented meaning is the biggest source of confident wrong answers. This is measurable: when Anthropic gave its internal analytics agent documented context, accuracy went from 21% to 95%, while raw access to thousands of past queries moved it by less than one point. And documentation is not write-once: one month without maintenance and their accuracy fell to 65%.
 
 ### Ask for the work, not just the answer
 
@@ -242,11 +242,11 @@ Ask for three things with every result: the exact query that ran, row counts thr
 
 ### Never let the agent check its own work
 
-An agent that reviews its own analysis carries the same assumptions and will approve them. Verification must be independent: at minimum a fresh context, better a different route, best a human who reads the work. Self-review catches typos, not wrong assumptions.
+An agent that reviews its own analysis carries the same assumptions and will approve them. Verification must be independent: at minimum a fresh context, better a different route, best a human who reads the work. Self-review catches typos, not wrong assumptions. Anthropic runs an adversarial agent against its analytics answers: about a third more tokens for six more points of accuracy.
 
 ### Spend the saved time on validation
 
-When analysis gets ten times cheaper, the temptation is to make ten times more analyses. Mostly wrong. The scarce thing was never the number of analyses; it was the correct ones. Keep the volume roughly the same and spend the saved time on the checks in this guide – the ones nobody had time for before.
+When analysis gets ten times cheaper, the number of analyses grows on its own: once agents answer directly, everyone asks. Your extra time should not go there. The scarce thing was never the number of analyses; it was the correct ones. Spend the saved time on the checks in this guide. At scale, build the checks into the system: one agreed definition per metric, tests that run on every change, answers that state their source.
 
 ### The question and the so-what stay yours
 
@@ -268,3 +268,5 @@ Riley ended with this: careful work is invisible. Nobody who makes decisions fro
 ## Attribution
 
 Adapted from [Good Data Analysis](https://developers.google.com/machine-learning/guides/good-data-analysis) by Patrick Riley (Google Machine Learning Guides, last major update June 2019), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This version is rewritten, shorter, moved to web analytics, and extended with the Agents section. Same license.
+
+The numbers in the Agents section come from [How Anthropic enables self-service data analytics with Claude](https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude): the same habits at company scale – 95% of queries automated, with accuracy driven by documented context, adversarial review, and humans who maintain both.
