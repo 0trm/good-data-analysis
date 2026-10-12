@@ -269,4 +269,4 @@ Riley ended with this: careful work is invisible. Nobody who makes decisions fro
 
 Adapted from [Good Data Analysis](https://developers.google.com/machine-learning/guides/good-data-analysis) by Patrick Riley (Google Machine Learning Guides, last major update June 2019), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This version is rewritten, shorter, moved to web analytics, and extended with the Agents section. Same license.
 
-The numbers in the Agents section come from [How Anthropic enables self-service data analytics with Claude](https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude): the same habits at company scale – 95% of queries automated, with accuracy driven by documented context, adversarial review, and humans who maintain both.
+The numbers in the Agents section come from [How Anthropic enables self-service data analytics with Claude](https://claude.com/resources/articles/how-anthropic-enables-self-service-data-analytics-with-claude): the same habits at company scale – 95% of queries automated, with accuracy driven by documented context, adversarial review, and humans who maintain both.
